@@ -50,3 +50,7 @@ ignoreErrors = ["error-disable-taxonomy"]
   # for details. An example TOML config that uses [ISO
   # 8601](https://en.wikipedia.org/wiki/ISO_8601) format:
   # dateFormat = "2006-01-02"
+  
+  # This theme, by default, will show a copyright line in the footer. You can remove this
+  # if you want with the following.
+  # hideCopyright = true
