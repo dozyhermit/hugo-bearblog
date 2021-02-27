@@ -1,1 +1,7 @@
-{{ if ne .Site.Params.hideMadeWithLine true }}Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>{{ end }}
+<span class="copy"
+  >Copyright &copy; {{ .Site.Params.mysite.copyright }} - {{ dateFormat "2006"
+  now }} {{ .Site.Params.author }}.</span
+>
+{{ if ne .Site.Params.hideMadeWithLine true }}Made with
+<a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>{{ end
+}}
