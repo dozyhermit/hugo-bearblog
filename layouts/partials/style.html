@@ -132,7 +132,7 @@
     display: block;
 
     padding-top: 16px;
-    padding-bottom: 16px;
+    padding-bottom: 24px;
   }
 
   .blog-post-description:last-child {
@@ -171,6 +171,16 @@
   /* taxonomies */
   .taxonomies {
     padding-top: 16px;
+  }
+
+  /* authors */
+  .authors {
+    padding-top: 8px;
+    display: inline-block;
+  }
+
+  .author:not(:last-child)::after {
+    content: ",";
   }
 
   /* color scheme */

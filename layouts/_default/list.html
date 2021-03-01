@@ -17,10 +17,15 @@
           </i>
         </span>
 
-        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <a href="{{ .Permalink }}">{{ .Title }}</a> 
       </li>
         
-      <span class="blog-post-description">{{ .Description }}</span>
+      <small class="authors">
+        written by: {{ range (.GetTerms "authors") }}
+        <span class="author"><a href="{{ .Permalink }}">{{.Name}}</a></span>
+        {{ end }}
+      </small>
+      <span class="blog-post-description"><em>{{ .Description }}</em></span>
     {{ else }}
     <li>
       No posts yet

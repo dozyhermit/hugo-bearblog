@@ -1,0 +1,21 @@
+{{ define "main" }}
+<h1>{{ .Name }}</h1>
+
+<content>List of posts by this author.</content>
+
+<ul class="blog-posts">
+  {{ range .Data.Pages }}
+  <li>
+    <span>
+      <i>
+        <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+          {{ .Date.Format "02 Jan, 2006" }}
+        </time>
+      </i>
+    </span>
+
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+  </li>
+  {{ end }}
+</ul>
+{{ end }}
