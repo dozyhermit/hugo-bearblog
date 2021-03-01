@@ -9,6 +9,8 @@
 </p>
 {{ end }}{{ end }}
 <content> {{ .Content }} </content>
+
+{{- if .Params.tags -}}
 <div class="taxonomies">
   <p>
     {{ range (.GetTerms "tags") }}
@@ -16,4 +18,13 @@
     {{ end }}
   </p>
 </div>
-{{ end }}
+{{ end }} {{- if .Params.tags -}} {{ if eq .Type "blog" }} {{ if not
+.Params.menu }}
+<div>
+  <p>
+    written by: {{ range (.GetTerms "authors") }}
+    <span class="author"><a href="{{ .Permalink }}">{{.Name}}</a></span>
+    {{ end }}
+  </p>
+</div>
+{{ end }} {{ end }} {{ end }} {{ end }}
