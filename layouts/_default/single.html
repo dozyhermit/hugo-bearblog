@@ -18,8 +18,8 @@
     {{ end }}
   </p>
 </div>
-{{ end }} {{- if .Params.tags -}} {{ if eq .Type "blog" }} {{ if not
-.Params.menu }}
+{{ end }} {{ if .Params.authors }} {{- if .Params.tags -}} {{ if eq .Type "blog"
+}} {{ if not .Params.menu }}
 <div>
   <p>
     written by: {{ range (.GetTerms "authors") }}
@@ -27,4 +27,4 @@
     {{ end }}
   </p>
 </div>
-{{ end }} {{ end }} {{ end }} {{ end }}
+{{ end }} {{ end }} {{ end }} {{ end }} {{ end }}
