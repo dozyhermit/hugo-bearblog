@@ -20,11 +20,14 @@
         <a href="{{ .Permalink }}">{{ .Title }}</a> 
       </li>
         
+      {{ if .Params.Authors }}
       <small class="authors">
         written by: {{ range (.GetTerms "authors") }}
         <span class="author"><a href="{{ .Permalink }}">{{.Name}}</a></span>
         {{ end }}
       </small>
+      {{ end }}
+
       <span class="blog-post-description"><em>{{ .Description }}</em></span>
     {{ else }}
     <li>
