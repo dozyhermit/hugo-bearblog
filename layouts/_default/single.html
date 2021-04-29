@@ -1,5 +1,6 @@
 {{ define "main" }} {{ if eq .Type "blog" }}{{ if not .Params.menu }}
 <h1>{{ .Title }}</h1>
+<<<<<<< HEAD
 <p>
   <i>
     <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
@@ -7,10 +8,32 @@
     </time>
   </i>
 </p>
+=======
+
+<div class="post-date">
+  <p>
+    <i>
+      <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+        {{ .Date.Format (default "02 Jan, 2006" .Site.Params.dateFormat) }}
+      </time>
+    </i>
+  </p>
+</div>
+>>>>>>> c48a7b9 (adding footnotes)
 {{ end }}{{ end }}
 <content> {{ .Content }} </content>
 
-{{- if .Params.tags -}}
+{{- if .Params.footnotes -}}
+<div class="footnotes">
+  <hr />
+
+  <ol>
+    {{ range (.Params.footnotes) }}
+    <small><li>{{ . | markdownify }}</li></small>
+    {{ end }}
+  </ol>
+</div>
+{{ end }} {{- if .Params.tags -}}
 <div class="taxonomies">
   <p>
     {{ range (.GetTerms "tags") }}
