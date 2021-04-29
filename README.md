@@ -4,10 +4,11 @@ This is a fork of [this](https://github.com/janraasch/hugo-bearblog) great templ
 
 Changes include:
 
-- Blog is at the index, instead of the blog being at `/blog`
-- Blog page pagination
+- Blog sits on the index, instead of being at `/blog` (still technically is, but I'm cheating it a little)
+- Blog pagination
 - Optional archive page (just a list of all posts, no pagination)
 - Optional copyright on footer
+- Optional footnotes on a post
 - Prettier opinionated formatting
 
-Go give them some love.
+Go give bearblog some love!
