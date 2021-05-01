@@ -11,15 +11,22 @@
   </p>
 </div>
 {{ end }}{{ end }}
-<content> {{ .Content }} </content>
+
+<content>
+  {{ .RawContent | replaceRE `(\[([1-9]+)\])` `[$1](#note-$2)` | markdownify }}
+</content>
 
 {{- if .Params.footnotes -}}
 <div class="footnotes">
   <hr />
 
   <ol>
-    {{ range (.Params.footnotes) }}
-    <small><li>{{ . | markdownify }}</li></small>
+    {{ range $index, $footnotes := (.Params.footnotes) }}
+    <small
+      ><li id="note-{{ add $index 1 }}">
+        {{ $footnotes | markdownify }}
+      </li></small
+    >
     {{ end }}
   </ol>
 </div>
