@@ -24,6 +24,10 @@
 
 <content>
   {{ .RawContent | replaceRE `(\[([1-9]+)\])` `[$1](#note-$2)` | markdownify }}
+
+  <span style="display: none"
+    >{{ replace .Site.Copyright "{year}" now.Year }}</span
+  >
 </content>
 
 {{- if .Params.footnotes -}}
