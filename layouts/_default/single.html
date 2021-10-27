@@ -44,7 +44,7 @@
     {{ end }}
   </ol>
 </div>
-{{ end }} {{- if .Params.tags -}}
+{{ end }} {{ if not .Site.Params.hideTaxonomies }} {{- if .Params.tags -}}
 <div class="taxonomies">
   <p>
     {{ range (.GetTerms "tags") }}
@@ -52,8 +52,8 @@
     {{ end }}
   </p>
 </div>
-{{ end }} {{ if .Params.authors }} {{- if .Params.tags -}} {{ if eq .Type "blog"
-}} {{ if not .Params.menu }}
+{{ end }} {{ end }} {{ if .Params.authors }} {{- if .Params.tags -}} {{ if eq
+.Type "blog" }} {{ if not .Params.menu }}
 <div>
   <p>
     written by: {{ range (.GetTerms "authors") }}

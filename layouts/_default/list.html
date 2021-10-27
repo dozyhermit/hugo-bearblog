@@ -38,6 +38,8 @@
 
   {{- partial "pagination.html" . -}}
 
+
+  {{ if not .Site.Params.hideTaxonomies }}
   {{ if .Data.Singular }}
   {{else}}
     <small>
@@ -48,5 +50,6 @@
       </div>
     </small>
     {{ end }}
+  {{ end }}
 </content>
 {{ end }}
