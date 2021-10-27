@@ -25,9 +25,7 @@
 <content>
   {{ .RawContent | replaceRE `(\[([1-9]+)\])` `[$1](#note-$2)` | markdownify }}
 
-  <span style="display: none"
-    >{{ replace .Site.Copyright "{year}" now.Year }}</span
-  >
+  <span hidden>{{ replace .Site.Copyright "{year}" now.Year }}</span>
 </content>
 
 {{- if .Params.footnotes -}}
@@ -44,7 +42,8 @@
     {{ end }}
   </ol>
 </div>
-{{ end }} {{ if not .Site.Params.hideTaxonomies }} {{- if .Params.tags -}}
+{{ end }} {{ if and (not .Site.Params.hideTaxonomies) (not
+.Site.Params.hideTaxonomiesOnSingle) }} {{- if .Params.tags -}}
 <div class="taxonomies">
   <p>
     {{ range (.GetTerms "tags") }}

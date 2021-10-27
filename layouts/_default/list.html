@@ -39,7 +39,7 @@
   {{- partial "pagination.html" . -}}
 
 
-  {{ if not .Site.Params.hideTaxonomies }}
+  {{ if and (not .Site.Params.hideTaxonomies) (not .Site.Params.hideTaxonomiesOnList) }}
   {{ if .Data.Singular }}
   {{else}}
     <small>
