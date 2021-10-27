@@ -1,10 +1,12 @@
 {{ define "main" }}
 <content>
   {{ if .Data.Singular }}
-  <h3 style="margin-bottom:0">Filtering for "{{ .Title }}"</h3>
-  <small>
-    <a href="{{ "blog" | relURL }}">Remove filter</a>
-  </small>
+    <h3 style="margin-bottom:0">Filtering for "{{ .Title }}"</h1>
+    <small>
+      <a href="{{ "blog" | relURL }}">Remove filter</a>
+    </small>
+  {{ else }}
+    <h3>Home</h3>
   {{ end }}
   <ul class="blog-posts">
     {{ range where .Paginator.Pages ".Date" "le" now }}
