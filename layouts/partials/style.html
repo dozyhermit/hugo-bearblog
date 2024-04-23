@@ -189,40 +189,6 @@
     padding-top: 8px;
   }
 
-  /* footnotes */
-  .footnotes {
-    padding-top: 16px;
-  }
-
-  .footnotes > hr:first-child {
-    width: 48px;
-    display: inline-block;
-  }
-
-  .footnotes > ol {
-    padding-inline-start: 0px;
-
-    list-style: none;
-    counter-reset: bracketed-counter;
-  }
-
-  .footnotes > ol li {
-    counter-increment: bracketed-counter;
-    margin-bottom: 8px;
-  }
-
-  .footnotes > ol li:target {
-    background-color: #2d2d2d;
-  }
-
-  .footnotes > ol li::before {
-    content: "[" counter(bracketed-counter) "] ";
-  }
-
-  .footnotes > ol > small {
-    font-size: 15px;
-  }
-
   /* authors */
   .authors {
     padding-top: 8px;

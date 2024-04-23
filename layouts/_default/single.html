@@ -18,21 +18,7 @@
   <span hidden>{{ replace .Site.Copyright "{year}" now.Year }}</span>
 </content>
 
-{{- if .Params.footnotes -}}
-<div class="footnotes">
-  <hr />
-
-  <ol>
-    {{ range $index, $footnotes := (.Params.footnotes) }}
-    <small
-      ><li id="note-{{ add $index 1 }}">
-        {{ $footnotes | markdownify }}
-      </li></small
-    >
-    {{ end }}
-  </ol>
-</div>
-{{ end }} {{ if and (not .Site.Params.hideTaxonomies) (not
+{{ if and (not .Site.Params.hideTaxonomies) (not
 .Site.Params.hideTaxonomiesOnSingle) }} {{- if .Params.tags -}}
 <div class="taxonomies">
   <p>

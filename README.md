@@ -8,7 +8,6 @@ Changes include:
 - Blog pagination
 - Optional archive page (just a list of all posts, no pagination)
 - Optional copyright on footer
-- Optional footnotes on a post
 - Prettier opinionated formatting
 
 Go give bearblog some love!
