@@ -1,1 +1,4 @@
 node_modules
+exampleSite/public
+exampleSite/.hugo_build.lock
+exampleSite/themes
